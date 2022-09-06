@@ -1,6 +1,6 @@
-# Symfony Nuxt
+# Symfony NuxtJS
 
-Symfony Nuxt boilerplate.
+Symfony NuxtJS boilerplate.
 
 ## Setup
 
@@ -31,35 +31,16 @@ For instance, instead of running `make up`, run `docker-compose up -d`.
 Update your `hosts` file with the following entries:
 
 ```
-127.0.0.1   traefik.symfony-nuxt.localhost
-127.0.0.1   symfony-nuxt.localhost
-127.0.0.1   api.symfony-nuxt.localhost
-127.0.0.1   phpmyadmin.symfony-nuxt.localhost
-127.0.0.1   mailhog.symfony-nuxt.localhost
+127.0.0.1   traefik.symfony-nuxtjs.localhost
+127.0.0.1   symfony-nuxtjs.localhost
+127.0.0.1   api.symfony-nuxtjs.localhost
+127.0.0.1   phpmyadmin.symfony-nuxtjs.localhost
+127.0.0.1   mailhog.symfony-nuxtjs.localhost
 ```
 
 On Linux and macOS, run `sudo nano /etc/hosts` to edit it.
 
 On Windows, edit the file `C:\Windows\System32\drivers\etc\hosts` with administrative privileges.
-
-### SSH configuration
-
-Update your SSH configuration with the following entry:
-
-```
-host code.mazars.global
-    Hostname 52.169.52.102
-    ForwardAgent yes
-```
-
-On Linux and macOS, run `sudo nano ~/.ssh/config` to edit it.
-
-On Windows, edit the file `c:\Program Files\Git\etc\ssh\ssh_config` with administrative privileges.
-
-Regarding the SSH key:
-
-* It must **not** require a passphrase, since your project will need to pull dependencies from private repositories
-  (`yarn` will not prompt for the passphrase but rather fail).
 
 ### First start
 
@@ -82,7 +63,7 @@ Next, run:
 docker-compose up webapp api
 ```
 
-📣&nbsp;&nbsp;This command starts the `webapp`, `api`, `hub` services. While booting, these services
+📣&nbsp;&nbsp;This command starts the `webapp`, `api` services. While booting, these services
 install their JavaScript and PHP dependencies. We cannot do that directly in the Vagrant VM as `yarn` and
 `composer install` may fail miserably the first time.
 
@@ -118,11 +99,11 @@ The containers will be ready faster next time you run this command as the first 
 
 Once everything is ready, the following endpoints should be available:
 
-* http://traefik.symfony-nuxt.localhost (Reverse proxy, the entry point of all the HTTP requests)
-* http://symfony-nuxt.localhost (Web application)
-* http://api.symfony-nuxt.localhost (API)
-* http://phpmyadmin.symfony-nuxt.localhost (phpMyAdmin, a web interface for your MySQL database)
-* http://mailhog.symfony-nuxt.localhost (Emails catcher)
+* http://traefik.symfony-nuxtjs.localhost (Reverse proxy, the entry point of all the HTTP requests)
+* http://symfony-nuxtjs.localhost (Web application)
+* http://api.symfony-nuxtjs.localhost (API)
+* http://phpmyadmin.symfony-nuxtjs.localhost (phpMyAdmin, a web interface for your MySQL database)
+* http://mailhog.symfony-nuxtjs.localhost (Emails catcher)
 
 You may now initialize the databases...
 
