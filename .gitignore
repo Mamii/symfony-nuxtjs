@@ -1,0 +1,4 @@
+Vagrantfile
+.env
+/.idea/
+.vagrant
